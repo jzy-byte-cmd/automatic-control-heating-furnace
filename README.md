@@ -9,3 +9,10 @@ matlab system identification toolbox, Global Optimization tool box
 
 python math库,matplotlib库
 
+## 各个文件功能即操作步骤说明
+
+1. `read_data.m` 读取数据到工作区内为time,tem,vlote
+2. 利用matlab system identification 导入工作区的time tem vlote，并进行传递函数的拟合，完成后导出回工作区并save("./gs_result.mat");
+3. `valid_gs.m`利用工作区内的传递函数和数据（运行时会load gs_result.mat），计算MSE，FPE，和拟合度，并可视化对比不同传递函数的准确性
+4. `inheritance_pid.m` 利用遗传算法整定PID参数，并计算超调量、调节时间、峰值时间等参数，并可视化；结果保存为`inheritance_pid*.mat`
+5. `PSO.m`利用粒子群算法整定PID参数，并计算超调量、调节时间、峰值时间等参数，并可视化;结果保存为`pso_optimized-*.mat`
